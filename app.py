@@ -6,10 +6,10 @@ import numpy as np
 import pickle
 
 # Load the saved model and tokenizer
-rnn_model = load_model(r'rnn_model.keras')
+rnn_model = load_model(r'model.keras')
 with open(r'tokenizer.pkl', 'rb') as f:
     tokenizer = pickle.load(f)
-with open(r'label_encoder (1).pkl', 'rb') as f:
+with open(r'label_encoder.pkl', 'rb') as f:
     label_encoder = pickle.load(f)
 
 app = Flask(__name__)
