@@ -23,6 +23,7 @@ CORS(app)  # Enable CORS for all routes
 
 @app.route('/')
 def home():
+    print(f'Data saved:') 
     return "Welcome to the RNN Model API!"
 
 @app.route('/predict', methods=['POST'])
