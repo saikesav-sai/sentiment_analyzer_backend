@@ -4,12 +4,18 @@ from tensorflow.keras.models import load_model
 from keras.preprocessing.sequence import pad_sequences
 import numpy as np
 import pickle
+import os
+
+
+keras_file          =os.path.join(os.path.dirname(__file__), 'model.keras')
+tokenizer_file      =os.path.join(os.path.dirname(__file__), 'tokenizer.pkl')
+label_encoder_file  =os.path.join(os.path.dirname(__file__), 'label_encoder.pkl')
 
 # Load the saved model and tokenizer
-rnn_model = load_model(r'model.keras')
-with open(r'tokenizer.pkl', 'rb') as f:
+rnn_model = load_model(keras_file)
+with open(tokenizer_file, 'rb') as f:
     tokenizer = pickle.load(f)
-with open(r'label_encoder.pkl', 'rb') as f:
+with open(label_encoder_file, 'rb') as f:
     label_encoder = pickle.load(f)
 
 app = Flask(__name__)
