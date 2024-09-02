@@ -1,3 +1,5 @@
 Flask-CORS==4.0.1
+tensorflow==2.17.0
+numpy==1.24.4
 gunicorn
 scikit-learn
