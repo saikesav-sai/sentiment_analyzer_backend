@@ -1,9 +1,22 @@
 {
     "version": 2,
     "builds": [
-      { "src": "app.py", "use": "@vercel/python" }
+      {
+      "src": "app.py",
+      "use": "@vercel/python",
+      "config": { "installCommand": "pip3 install --no-cache-dir --target . -r requirements.txt" }
+    }
     ],
     "routes": [
       { "src": "/(.*)", "dest": "app.py" }
-    ]
+    ],
+    
+    "build": {
+        "env": {
+          "PYTHON_VERSION": "3.10.6"
+        }
+      }
+    
   }
+  
+  
